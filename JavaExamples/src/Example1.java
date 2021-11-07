@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.*;
@@ -8,11 +9,21 @@ public class Example1 {
         int rows = 100;
         int columns = 1000000;
         int[][] matrix = createAndFillMatrix(rows, columns);
+        //single calculation
         long startTime = System.nanoTime();
         int result = matrixMaxValueParallel(matrix);
         long stopTime = System.nanoTime();
-        System.out.println(result);
         System.out.println((stopTime - startTime)/1e6 + "ms");
+
+        //multiple calculation
+//        double[] timeResults = new double[1000];
+//        for(int i = 0; i < 1000; i++){
+//            long startTime = System.nanoTime();
+//            int result = matrixMaxValueParallel(matrix);
+//            long stopTime = System.nanoTime();
+//            timeResults[i] = (stopTime - startTime)/1e6;
+//        }
+//        System.out.println(Arrays.stream(timeResults).min().getAsDouble());
     }
 
     public static int matrixMaxValueParallel(int[][] matrix) {

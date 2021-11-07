@@ -12,11 +12,28 @@ func main() {
 	rows := 100
 	columns := 1000000
 	a := createAndFillMatrix(rows, columns)
+
+	//single calculation
 	start := time.Now()
-	result := findMaxValue(a)
+	findMaxValue(a)
 	duration := time.Since(start)
-	fmt.Println(result)
 	fmt.Println(duration)
+	//multiple calculation
+
+	//var timeArray[] time.Duration
+	//for i := 0; i < 1000; i++ {
+	//	start := time.Now()
+	//	findMaxValue(a)
+	//	duration := time.Since(start)
+	//	timeArray = append(timeArray, duration)
+	//}
+	//var min time.Duration
+	//for i, e := range timeArray {
+	//	if i==0 || e < min {
+	//		min = e
+	//	}
+	//}
+	//fmt.Println(min)
 }
 
 func findMaxValue(matrix [][]int) int {
