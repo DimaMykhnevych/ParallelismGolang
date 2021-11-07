@@ -9,16 +9,17 @@ import (
 )
 
 func main() {
-	rows := 100
-	columns := 1000000
-	a := createAndFillMatrix(rows, columns)
-
-	//single calculation
-	start := time.Now()
-	findMaxValue(a)
-	duration := time.Since(start)
-	fmt.Println(duration)
-	//multiple calculation
+	// Example 1
+	//rows := 100
+	//columns := 1000000
+	//a := createAndFillMatrix(rows, columns)
+	//
+	////single calculation
+	//start := time.Now()
+	//findMaxValue(a)
+	//duration := time.Since(start)
+	//fmt.Println(duration)
+	////multiple calculation
 
 	//var timeArray[] time.Duration
 	//for i := 0; i < 1000; i++ {
@@ -34,6 +35,24 @@ func main() {
 	//	}
 	//}
 	//fmt.Println(min)
+
+	//Example 2
+	validSudoku := [9][9]int{
+		{1, 4, 7, 0, 0, 0, 0, 0, 3},
+		{2, 5, 0, 0, 0, 1, 0, 0, 0},
+		{3, 0, 9, 0, 0, 0, 0, 0, 0},
+		{0, 8, 0, 0, 2, 0, 0, 0, 4},
+		{0, 0, 0, 4, 1, 0, 0, 2, 0},
+		{9, 0, 0, 0, 0, 0, 6, 0, 0},
+		{0, 0, 3, 0, 0, 0, 0, 0, 9},
+		{4, 0, 0, 0, 0, 2, 0, 0, 0},
+		{0, 0, 1, 0, 0, 8, 0, 0, 7},
+	}
+	start := time.Now()
+	isValid := isSudokuValid(validSudoku)
+	duration := time.Since(start)
+	fmt.Println("Is Valid:", isValid)
+	fmt.Println(duration.Microseconds())
 }
 
 func findMaxValue(matrix [][]int) int {
