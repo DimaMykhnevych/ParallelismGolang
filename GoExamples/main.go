@@ -10,7 +10,7 @@ import (
 
 func main() {
 	rows := 100
-	columns := 100000
+	columns := 1000000
 	a := createAndFillMatrix(rows, columns)
 	start := time.Now()
 	result := findMaxValue(a)

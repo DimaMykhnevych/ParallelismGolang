@@ -6,7 +6,7 @@ import java.util.concurrent.*;
 public class Example1 {
     public static void main(String[] args) {
         int rows = 100;
-        int columns = 100000;
+        int columns = 1000000;
         int[][] matrix = createAndFillMatrix(rows, columns);
         long startTime = System.nanoTime();
         int result = matrixMaxValueParallel(matrix);
