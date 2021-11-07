@@ -52,7 +52,7 @@ func main() {
 	isValid := isSudokuValid(validSudoku)
 	duration := time.Since(start)
 	fmt.Println("Is Valid:", isValid)
-	fmt.Println(duration.Microseconds())
+	fmt.Println(duration.Nanoseconds())
 }
 
 func findMaxValue(matrix [][]int) int {
